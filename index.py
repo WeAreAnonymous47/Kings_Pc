@@ -65,27 +65,6 @@ config = open("/boot/config.txt", "a")
 config.write(" disable_splash=1") 
 config.close()         
 
-
-with fileinput.FileInput("/usr/share/plymouth/themes/pix/pix.script", inplace=True) as file:
-    for line in file:
-        print(line.replace("message_sprite = Sprite();", "#message_sprite = Sprite();"), end='')
-    
-    
-with fileinput.FileInput("/usr/share/plymouth/themes/pix/pix.script", inplace=True) as file:
-    for line in file:
-        print(line.replace("message_sprite.SetPosition(screen_width * 0.1, screen_height * 0.9, 10000);", "#message_sprite.SetPosition(screen_width * 0.1, screen_height * 0.9, 10000);"), end='')
-    
-    
-with fileinput.FileInput("/usr/share/plymouth/themes/pix/pix.script", inplace=True) as file:
-    for line in file:
-        print(line.replace("my_image = Image.Text(text, 1, 1, 1);", "#my_image = Image.Text(text, 1, 1, 1);"), end='')
-    
-    
-with fileinput.FileInput("/usr/share/plymouth/themes/pix/pix.script", inplace=True) as file:
-    for line in file:
-        print(line.replace("message_sprite.SetImage(my_image);", "#message_sprite.SetImage(my_image);"), end='')
-
-
 with fileinput.FileInput("/boot/cmdline.txt", inplace=True) as file:
     for line in file:
         print(line.replace("console=tty1", "console=tty3"), end='')
@@ -125,6 +104,24 @@ os.system("sudo ./home/pi/Kings_Pc/LCD-show/LCD101-1024x600-show")
 
 
 
+with fileinput.FileInput("/usr/share/plymouth/themes/pix/pix.script", inplace=True) as file:
+    for line in file:
+        print(line.replace("message_sprite = Sprite();", "#message_sprite = Sprite();"), end='')
+    
+    
+with fileinput.FileInput("/usr/share/plymouth/themes/pix/pix.script", inplace=True) as file:
+    for line in file:
+        print(line.replace("message_sprite.SetPosition(screen_width * 0.1, screen_height * 0.9, 10000);", "#message_sprite.SetPosition(screen_width * 0.1, screen_height * 0.9, 10000);"), end='')
+    
+    
+with fileinput.FileInput("/usr/share/plymouth/themes/pix/pix.script", inplace=True) as file:
+    for line in file:
+        print(line.replace("my_image = Image.Text(text, 1, 1, 1);", "#my_image = Image.Text(text, 1, 1, 1);"), end='')
+    
+    
+with fileinput.FileInput("/usr/share/plymouth/themes/pix/pix.script", inplace=True) as file:
+    for line in file:
+        print(line.replace("message_sprite.SetImage(my_image);", "#message_sprite.SetImage(my_image);"), end='')
 
 
 os.system("sudo chmod +rwx /home/pi/Kings_Computer/Version.txt")
