@@ -80,7 +80,7 @@ cmdline.write("console=serial0,115200 console=tty3 root=/dev/mmcblk0p2 rootfstyp
 cmdline.close() 
 
 os.system("sudo mv /home/pi/Kings_Pc/autostart.zip /home/pi/.config/")
-os.system("sudo unzip /home/pi/.config/autostart.zip")
+os.system("sudo unzip /home/pi/.config/autostart.zip -d /home/pi/.config/autostart/")
 os.system("sudo rm -rf /home/pi/.config/autostart.zip")
 os.system("sudo chmod +rwx /home/pi/.config/autostart/DevilsPie")
 os.system("sudo chmod +rwx /home/pi/.config/autostart/Login")
@@ -92,14 +92,14 @@ os.system("sudo mv /home/pi/.config/autostart/Kali-Dark/ /usr/share/themes/")
 os.system("sudo mv /home/pi/.config/autostart/pix/ /usr/share/plymouth/themes/")
 
 os.system("sudo mv /home/pi/Kings_Pc/Kings_Computer.zip /home/pi/")
-os.system("sudo unzip /home/pi/Kings_Computer.zip")
+os.system("sudo unzip /home/pi/Kings_Computer.zip -d /home/pi/")
 
 os.system("sudo chmod +rwx /home/pi/Kings_Computer/")
 os.system("sudo chmod +rwx /home/pi/Kings_Computer/index.py")
 os.system("sudo chmod +rwx /home/pi/Kings_Computer/Main.py")
 
 
-os.system("sudo unzip /home/pi/Kings_Pc/LCD_show.zip")
+os.system("sudo unzip /home/pi/Kings_Pc/LCD_show.zip -d /home/pi/Kings_Pc/")
 os.system("sudo ./home/pi/Kings_Pc/LCD-show/LCD101-1024x600-show")
 
 
